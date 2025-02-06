@@ -23,7 +23,7 @@ export default function ProjectDetail() {
           <div className="mb-12">
             <div className="relative aspect-[16/9] w-full">
               <Image
-                src=""
+                src="/project/project-1.png"
                 alt="Office space with computers"
                 fill
                 className="object-cover"
@@ -36,7 +36,7 @@ export default function ProjectDetail() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {/* Secondary Image */}
             <div className="relative aspect-[4/3]">
-              <Image src="/placeholder.svg?height=600&width=800" alt="Office interior" fill className="object-cover" />
+              <Image src="/project/project-2.png" alt="Office interior" fill className="object-cover" />
             </div>
 
             {/* Project Description */}
@@ -64,7 +64,7 @@ export default function ProjectDetail() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative aspect-[4/3]">
               <Image
-                src="/placeholder.svg?height=600&width=800"
+                src="/project/project-3.png"
                 alt="Floor plan - Layout 1"
                 fill
                 className="object-contain bg-[rgb(var(--color-secondary))]"
@@ -72,7 +72,7 @@ export default function ProjectDetail() {
             </div>
             <div className="relative aspect-[4/3]">
               <Image
-                src="/placeholder.svg?height=600&width=800"
+                src="/project/project-4.png"
                 alt="Floor plan - Layout 2"
                 fill
                 className="object-contain bg-[rgb(var(--color-secondary))]"

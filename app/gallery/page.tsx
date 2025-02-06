@@ -11,43 +11,43 @@ import Header from "@/components/header"
 
 const galleryImages = [
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-1.png",
     alt: "Architectural detail in grayscale",
   },
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-2.png",
     alt: "Lighthouse at sunset",
   },
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-3.png",
     alt: "Modern glass ceiling structure",
   },
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-4.png",
     alt: "Red and white lighthouse",
   },
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-5.png",
     alt: "Historic ruins with lawn",
   },
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-6.png",
     alt: "Classical architectural arch",
   },
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-7.png",
     alt: "European city street",
   },
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-8.png",
     alt: "Modern colonnade building",
   },
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-9.png",
     alt: "Venetian waterfront",
   },
   {
-    src: "/placeholder.svg?height=600&width=600",
+    src: "/gallery/gallery-10.png",
     alt: "Modern skyscraper view",
   },
 ]
