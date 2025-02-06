@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import type React from "react" // Import React
+import { ThemeProvider } from "@/contexts/ThemeContext"
+import type React from "react" // Added import for React
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -17,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white`}>{children}</body>
+      <ThemeProvider>
+        <body className={inter.className}>{children}</body>
+      </ThemeProvider>
     </html>
   )
 }
+

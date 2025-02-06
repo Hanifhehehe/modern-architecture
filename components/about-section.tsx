@@ -31,7 +31,10 @@ export default function AboutSection() {
             standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
             make a type specimen book.
           </p>
-          <Link href="/about" className="inline-flex items-center text-sm hover:underline">
+          <Link
+            href="/about"
+            className="inline-flex items-center text-sm hover:underline text-[rgb(var(--color-primary))]"
+          >
             READ MORE <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
         </div>
