@@ -4,11 +4,11 @@ import { Facebook, Twitter, Linkedin, PinIcon as Pinterest } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2c2c2c] text-white px-8 py-12">
-      <div className="grid grid-cols-4 gap-8 max-w-7xl mx-auto">
+    <footer className="bg-[rgb(var(--color-primary))] text-white px-4 sm:px-6 lg:px-8 py-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
         <div>
           <Image
-            src="/logo-footer.png"
+            src="/logo/logo-footer.png"
             alt="Digital Project Logo"
             width={60}
             height={60}
@@ -18,7 +18,7 @@ export default function Footer() {
 
         <div>
           <h3 className="font-medium mb-4">Information</h3>
-          <ul className="space-y-2 text-gray-400">
+          <ul className="space-y-2 text-[rgb(var(--color-text-light))]">
             <li>
               <Link href="/main" className="hover:text-white">
                 Main
@@ -49,7 +49,7 @@ export default function Footer() {
 
         <div>
           <h3 className="font-medium mb-4">Contacts</h3>
-          <ul className="space-y-2 text-gray-400">
+          <ul className="space-y-2 text-[rgb(var(--color-text-light))]">
             <li>1234 Sample Street</li>
             <li>Austin Texas 78704</li>
             <li className="pt-4">512.333.2222</li>
@@ -59,7 +59,7 @@ export default function Footer() {
 
         <div>
           <h3 className="font-medium mb-4">Social Media</h3>
-          <div className="flex space-x-4 text-gray-400">
+          <div className="flex space-x-4 text-[rgb(var(--color-text-light))]">
             <Link href="#" className="hover:text-white">
               <Facebook className="w-5 h-5" />
             </Link>
@@ -75,9 +75,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="text-center text-gray-400 text-sm mt-12">© 2025 All Rights Reserved</div>
+      <div className="text-center text-[rgb(var(--color-text-light))] text-sm mt-12">© 2021 All Rights Reserved</div>
     </footer>
   )
 }
-
 

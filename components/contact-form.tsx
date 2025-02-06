@@ -8,14 +8,16 @@ import { ArrowRight } from "lucide-react"
 
 export default function ContactForm() {
   return (
-    <section className="px-8 py-16">
+    <section className="px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-light text-[rgb(var(--color-text-light))] mb-12">Contact Us</h2>
-        <div className="grid grid-cols-2 gap-16">
+        <h2 className="text-2xl md:text-3xl font-light text-[rgb(var(--color-text-light))] mb-8 md:mb-12">
+          Contact Us
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
           <form className="space-y-6">
             <Input type="text" placeholder="Name" className="bg-[rgb(var(--color-form-bg))] border-none" />
             <Input type="tel" placeholder="Phone Number" className="bg-[rgb(var(--color-form-bg))] border-none" />
-            <Input type="email" placeholder="Email" className="bg-[rgb(var--color-form-bg))] border-none" />
+            <Input type="email" placeholder="Email" className="bg-[rgb(var(--color-form-bg))] border-none" />
             <Textarea placeholder="Message" className="bg-[rgb(var(--color-form-bg))] border-none min-h-[150px]" />
             <Button
               type="submit"
@@ -24,9 +26,9 @@ export default function ContactForm() {
               SEND EMAIL <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </form>
-          <div>
+          <div className="hidden md:block">
             <Image
-              src="/placeholder.svg?height=600&width=400"
+              src="/contact/contact-us.png"
               alt="Contact visual"
               width={400}
               height={600}

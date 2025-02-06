@@ -14,7 +14,7 @@ export default function Home() {
       <AboutSection />
       <MissionStatement />
       <ProjectsGrid />
-      {/* <ContactForm /> */}
+      <ContactForm />
       <Footer />
     </main>
   )

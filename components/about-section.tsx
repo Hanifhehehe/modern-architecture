@@ -4,9 +4,9 @@ import Link from "next/link"
 
 export default function AboutSection() {
   return (
-    <section className="px-8 py-16 bg-[rgb(var(--color-secondary))]">
-      <div className="max-w-7xl mx-auto grid grid-cols-12 gap-8">
-        <div className="col-span-4">
+    <section className="px-4 sm:px-6 lg:px-8 py-12 md:py-16 bg-[rgb(var(--color-secondary))]">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div className="md:col-span-4">
           <Image
             src="/about/about-1.png"
             alt="Architecture detail 1"
@@ -15,7 +15,7 @@ export default function AboutSection() {
             className="w-full h-auto"
           />
         </div>
-        <div className="col-span-4">
+        <div className="md:col-span-4">
           <Image
             src="/about/about-2.png"
             alt="Architecture detail 2"
@@ -24,8 +24,8 @@ export default function AboutSection() {
             className="w-full h-auto"
           />
         </div>
-        <div className="col-span-4 flex flex-col justify-center">
-          <h2 className="text-4xl font-light text-[rgb(var(--color-text-light))] mb-6">About</h2>
+        <div className="md:col-span-4 flex flex-col justify-center">
+          <h2 className="text-3xl md:text-4xl font-light text-[rgb(var(--color-text-light))] mb-6">About</h2>
           <p className="text-[rgb(var(--color-primary))] mb-8">
             Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry
             standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
