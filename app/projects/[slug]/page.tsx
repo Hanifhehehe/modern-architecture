@@ -1,8 +1,6 @@
 "use client"
 
 import { useTheme } from "@/contexts/ThemeContext"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
 import Image from "next/image"
 
 export default function ProjectDetail() {
@@ -10,7 +8,6 @@ export default function ProjectDetail() {
 
   return (
     <div className={`min-h-screen flex flex-col ${theme === "dark" ? "dark" : ""}`}>
-      <Header />
       <main className="flex-1 px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="max-w-7xl mx-auto">
           {/* Project Title */}
@@ -81,7 +78,6 @@ export default function ProjectDetail() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }

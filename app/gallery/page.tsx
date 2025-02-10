@@ -2,12 +2,10 @@
 
 import { useState } from "react"
 
-import Footer from "@/components/footer"
 import GalleryImage from "@/components/gallery-image"
 import { useTheme } from "@/contexts/ThemeContext"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Header from "@/components/header"
 
 const galleryImages = [
   {
@@ -46,10 +44,10 @@ const galleryImages = [
     src: "/gallery/gallery-9.png",
     alt: "Venetian waterfront",
   },
-  {
-    src: "/gallery/gallery-10.png",
-    alt: "Modern skyscraper view",
-  },
+  // {
+  //   src: "/gallery/gallery-10.png",
+  //   alt: "Modern skyscraper view",
+  // },
 ]
 
 export default function GalleryPage() {
@@ -58,7 +56,6 @@ export default function GalleryPage() {
 
   return (
     <div className={`min-h-screen flex flex-col ${theme === "dark" ? "dark" : ""}`}>
-      <Header />
       <main className="flex-1 px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="max-w-7xl mx-auto">
           {/* Gallery Title */}
@@ -102,7 +99,6 @@ export default function GalleryPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }

@@ -1,10 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import Header from "@/components/header"
 import ProjectCard from "@/components/project-card"
 import Pagination from "@/components/pagination"
-import Footer from "@/components/footer"
 import { useTheme } from "@/contexts/ThemeContext"
 
 const projects = [
@@ -13,7 +11,7 @@ const projects = [
     title: "Sample Project",
     description:
       "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    imageUrl: "/placeholder.svg?height=600&width=800",
+    imageUrl: "/project-list/project-1.png",
     projectUrl: "/projects/sample-project",
   },
   {
@@ -21,7 +19,7 @@ const projects = [
     title: "Sample Project 2",
     description:
       "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    imageUrl: "/placeholder.svg?height=600&width=800",
+    imageUrl: "/project-list/project-2.png",
     projectUrl: "/projects/sample-project-2",
   },
   {
@@ -29,7 +27,7 @@ const projects = [
     title: "Sample Project 3",
     description:
       "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    imageUrl: "/placeholder.svg?height=600&width=800",
+    imageUrl: "/project-list/project-3.png",
     projectUrl: "/projects/sample-project-3",
   },
 ]
@@ -40,7 +38,6 @@ export default function ProjectsPage() {
 
   return (
     <div className={`min-h-screen flex flex-col ${theme === "dark" ? "dark" : ""}`}>
-      <Header />
       <main className="flex-1 px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
@@ -63,7 +60,6 @@ export default function ProjectsPage() {
           <Pagination currentPage={currentPage} totalPages={5} onPageChange={setCurrentPage} />
         </div>
       </main>
-      <Footer />
     </div>
   )
 }
