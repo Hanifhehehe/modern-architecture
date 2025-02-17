@@ -1,27 +1,18 @@
-/* This component uses the Next.js `use client` directive to enable server-side rendering */
 "use client"
 
-/* Importing Link from next/link and Image from next/image for use in this component */
 import Link from "next/link"
 import Image from "next/image"
-
-/* Importing Menu from lucide-react and Button from a local component (Button) for use in this component */
-import { Menu } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-/* Importing useTheme and usePathname from Next.js and using them to manage theme and get the current pathname, respectively */
 import { useTheme } from "@/contexts/ThemeContext"
 import { usePathname } from "next/navigation"
+import { useState } from "react"
 
-/* Defining the default component (Header) that will be used as the entry point for this code block */
 export default function Header() {
-  /* Using useTheme to get the current theme and assigning it to a variable called 'theme' */
   const { theme } = useTheme();
-
-  /* Using usePathname to get the current pathname and assigning it to a variable called 'pathname' */
+  const [isToggle, setIsToggle] = useState(false);
   const pathname = usePathname();
 
-  /* Defining an array of links with their corresponding names and hrefs */
   const links = [
     { name: "Home", href: "/" },
     { name: "Gallery", href: "/gallery" },
@@ -29,50 +20,80 @@ export default function Header() {
     { name: "Contact", href: "/contact" },
   ];
 
-  /* Returning the JSX for this component's header */
-  return (
-    <nav
-      /* Adding a class to the nav element based on the theme and pathname */
-      className={`flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 lg:py-6 ${theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"}`}
-    >
-      <Link
-        /* Wrapping the logo with a Link component and adding some basic styles */
-        href="/" className="flex items-center">
-        <Image
-          src="/logo/logo-header.png"
-          alt="Digital Project Logo"
-          width={40}
-          height={40}
-          className="w-auto h-6 sm:h-8"
-        />
-      </Link>
-      <div
-        /* Hiding the links on small screens and adding some basic styles */
-        className="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm">
-        {links.map((link) => {
-          const isActive =
-            link.href === "/"
-              ? pathname === "/"
-              : pathname.startsWith(link.href);
+  function handleToggle() {
+    setIsToggle(!isToggle);
+  }
 
-          return (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`${isActive ? "border-b" : ""} ${
-                theme === "dark" ? "border-white" : "border-black"
-              }`}
-            >
-              {link.name}
-            </Link>
-          );
-        })}
-      </div>
-      <Button
-        /* Adding a button with some basic styles and hiding it on large screens */
-        variant="ghost" size="icon" className="md:hidden">
-        <Menu className="h-6 w-6" />
-      </Button>
-    </nav>
+  return (
+    <header className="relative">
+      <nav
+        className={`flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4 lg:py-6 ${
+          theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
+        }`}
+      >
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo/logo-header.png"
+            alt="Digital Project Logo"
+            width={40}
+            height={40}
+            className="w-auto h-6 sm:h-8"
+          />
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm">
+          {links.map((link) => {
+            const isActive =
+              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`${
+                  isActive ? "border-b" : "hover:opacity-75"
+                } ${theme === "dark" ? "border-white" : "border-black"} transition-all duration-200`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <Button onClick={handleToggle} variant="ghost" size="icon" className="md:hidden">
+          {isToggle ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </Button>
+      </nav>
+
+      {/* Mobile Navigation Dropdown */}
+      {isToggle && (
+        <div
+          className={`absolute top-full left-0 w-full border-t z-50 ${
+            theme === "dark" ? "bg-gray-900 text-white border-gray-700" : "bg-white text-black border-gray-200"
+          }`}
+        >
+          <ul className="flex flex-col space-y-2 p-4">
+            {links.map((link) => {
+              const isActive =
+                link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              return (
+                <li key={link.name}>
+                  <Link
+                    onClick={handleToggle}
+                    href={link.href}
+                    className={`block transition-all duration-200 ${
+                      isActive ? "font-bold" : "hover:opacity-75"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+    </header>
   );
 }
